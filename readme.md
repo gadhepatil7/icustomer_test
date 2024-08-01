@@ -1,8 +1,6 @@
 # Data Engineering Assignment
 ## Task 1: Data Ingestion and ETL
 
-Direcory stucture for the rep is like below
-
 ├── clean/
 │   └── clean.py
 ├── gen_data/
