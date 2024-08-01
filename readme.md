@@ -1,13 +1,12 @@
 
-```markdown
 
 ## Task 1: Data Ingestion and ETL
 
 ### Setup Instructions
 
-**1. Install Requirements**
+**1. Install Dependencies**
 
-Install the required Python packages:
+Install the required Python packages using:
 
 ```bash
 pip install -r requirements.txt
@@ -15,7 +14,7 @@ pip install -r requirements.txt
 
 ### 0. Generate Data
 
-Use the provided module to generate data:
+Generate sample data using the provided script:
 
 ```bash
 python3 genrate_data.py --num_rows 1000 --file_path data.csv
@@ -23,7 +22,7 @@ python3 genrate_data.py --num_rows 1000 --file_path data.csv
 
 ### 1. Data Ingestion
 
-Ingest the generated data and store it in `rep_db`:
+Ingest the generated data and store it in the `rep_db` database:
 
 ```bash
 python3 ingest.py --genrated_file_path ../gen_data/data.csv --db_path rep_db.db --table_name rep_interaction
@@ -31,7 +30,7 @@ python3 ingest.py --genrated_file_path ../gen_data/data.csv --db_path rep_db.db 
 
 ### 2. Data Cleaning
 
-Clean the ingested data and store it in `raw_db`:
+Clean the ingested data and store it in the `raw_db` database:
 
 ```bash
 python3 clean.py --ingested_db_path ../ingest/rep_db.db --ingested_table_name rep_interaction --cleaned_db_path raw_db.db --cleaned_table_name raw_interaction
@@ -39,12 +38,12 @@ python3 clean.py --ingested_db_path ../ingest/rep_db.db --ingested_table_name re
 
 ### 3. Data Transformation
 
-Transform the cleaned data and add data retrieval scripts. The `pub_db` will contain the following tables:
+Transform the cleaned data and generate the following tables in the `pub_db` database:
 
-- `pub_interaction`: Transformed and cleaned table
-- `interactions_count`: Table with `interactions_count` column added
-- `interactions_per_day`: Number of interactions per day
-- `top_5_users`: Top 5 users by number of interactions
+- **`pub_interaction`**: Transformed and cleaned data
+- **`interactions_count`**: Table with `interactions_count` column
+- **`interactions_per_day`**: Number of interactions per day
+- **`top_5_users`**: Top 5 users by number of interactions
 
 Run the transformation script:
 
@@ -54,7 +53,7 @@ python3 transform.py --clean_db_path ../clean/raw_db.db --clean_table_name raw_i
 
 ### 4. Data Loading
 
-Data will be loaded into the following databases after each step:
+Data will be loaded into the following databases:
 
 - **Ingestion:** `rep_db` (Replication Database)
 - **Cleaning:** `raw_db` (Raw Zone)
@@ -62,11 +61,9 @@ Data will be loaded into the following databases after each step:
 
 ## Task 2: Data Pipeline with Apache Airflow
 
-Created an Airflow DAG to automate these modules as Python operators.
+An Airflow DAG has been created to automate these steps using Python operators.
 
 ## Task 3: Data Storage and Retrieval
 
-The SQLite database has been created and shared. In `pub_db`, all required tables as per instructions are stored.
+The SQLite database has been created and shared. The `pub_db` database contains all the tables as per the requirements.
 ```
-
-This version provides a clearer structure and more detailed descriptions of each step.
