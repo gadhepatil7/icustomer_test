@@ -1,21 +1,6 @@
 # Data Engineering Assignment
 ## Task 1: Data Ingestion and ETL
 
-
-├── clean/
-│   └── clean.py
-├── gen_data/
-│   └── genrate_data.py
-├── ingest/
-│   └── ingest.py
-├── transform/
-│   └── transform.py
-├── airflow/
-│   └── dag.py
-└── requirements.txt
-└── readme.md
-
-
 ## Setup Instructions
 
 1. **Install Requirements**
