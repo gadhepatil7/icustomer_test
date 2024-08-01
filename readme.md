@@ -66,4 +66,3 @@ An Airflow DAG has been created to automate these steps using Python operators.
 ## Task 3: Data Storage and Retrieval
 
 The SQLite database has been created and shared. The `pub_db` database contains all the tables as per the requirements.
-```
