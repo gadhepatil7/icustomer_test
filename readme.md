@@ -1,4 +1,5 @@
 
+# Data Engineering Assignment
 
 ## Task 1: Data Ingestion and ETL
 
@@ -10,6 +11,24 @@ Install the required Python packages using:
 
 ```bash
 pip install -r requirements.txt
+```
+
+### Directory Structure
+
+```
+/
+├── clean/
+│   └── clean.py
+├── gen_data/
+│   └── genrate_data.py
+├── ingest/
+│   └── ingest.py
+├── transform/
+│   └── transform.py
+├── airflow/
+│   └── dag.py
+└── requirements.txt
+└── readme.md
 ```
 
 ### 0. Generate Data
